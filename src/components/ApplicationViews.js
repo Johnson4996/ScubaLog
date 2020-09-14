@@ -12,6 +12,9 @@ export const ApplicationViews = () =>{
                 <Route exact path="/">
                     <DiveLogList />
                 </Route>
+                {/* <Route path="/divelog/:diveLogId(\d+)" render={
+                            props => <DiveLogDetail {...props} />
+                        } /> */}
             </DiveLogProvider>
         </>
 
