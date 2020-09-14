@@ -8,7 +8,7 @@ export const DiveLogProvider = (props) => {
 
     const getDiveLogs = () => {
         return fetch("http://localhost:8088/divelogs")
-            .then(res => res.json)
+            .then(res => res.json())
             .then(setDiveLogs)
     }
 
@@ -33,7 +33,7 @@ export const DiveLogProvider = (props) => {
 
     return (
         <LogContext.Provider value={{
-            diveLogs, addDiveLog
+            diveLogs, addDiveLog, getDiveLogs
         }}>
             {props.children}
         </LogContext.Provider>

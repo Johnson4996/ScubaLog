@@ -1,0 +1,19 @@
+.recentDives{
+    width: 25rem;
+    overflow-y: scroll;
+    height:25rem;
+    margin-left: 1rem;
+}
+
+.recentDivesTop{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.viewAllBtn{
+    margin-left: auto;
+    background: none;
+    border: none;
+    text-decoration: underline;
+}
