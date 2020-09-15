@@ -23,6 +23,13 @@ export const DiveLogProvider = (props) => {
             .then(getDiveLogs)
     }
 
+    const deleteLog = (logId) => {
+        return fetch(`http://localhost:8088/divelogs/${logId}`, {
+            method: "DELETE"
+        })
+            .then(getDiveLogs)
+    }
+
     useEffect(() => {
         getDiveLogs()
     }, [])
@@ -33,7 +40,7 @@ export const DiveLogProvider = (props) => {
 
     return (
         <LogContext.Provider value={{
-            diveLogs, addDiveLog, getDiveLogs
+            diveLogs, addDiveLog, getDiveLogs, deleteLog
         }}>
             {props.children}
         </LogContext.Provider>

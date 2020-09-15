@@ -1,8 +1,11 @@
-import React from "react"
+import React, { useContext } from "react"
+import { LogContext } from "./DiveLogProvider"
 
 export const DiveLog = ({diveLog}) =>{
-
+const {deleteLog} = useContext(LogContext)
 return(
+    <>
+    <button>Dashboard</button>
     <article className="diveLogDetails">
         <p>{diveLog.title}</p>
         <p>{diveLog.date}</p>
@@ -25,6 +28,7 @@ return(
         <p>{diveLog.verifyCert}</p>
         <p>{diveLog.verifyType}</p>
     </article>
+    </>
 )
 }
     
