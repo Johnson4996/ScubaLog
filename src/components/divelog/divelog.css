@@ -1,0 +1,28 @@
+.recentDives{
+    width: 25rem;
+    overflow-y: scroll;
+    height:20rem;
+    margin-left: 1rem;
+    padding:1rem;
+    background-color: rgb(77,76,76,.7);
+    border-radius: 5px;
+}
+
+.recentDivesTop{
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+
+.viewAllBtn{
+    margin-left: auto;
+    background: none;
+    border: none;
+    text-decoration: underline;
+}
+
+.log-link{
+    text-decoration: none;
+    color:black;
+}
