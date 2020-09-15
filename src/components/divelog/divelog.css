@@ -26,3 +26,10 @@
     text-decoration: none;
     color:black;
 }
+
+.allDiveLogs{
+    width:100%;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
