@@ -18,7 +18,6 @@ export const ScubaLog = () =>(
             <div className="header">
                 <img src={logo} className="logo" alt="logo" />
             </div>
-                <h2>Dashboard</h2>
                 <Route render={props => <ApplicationViews {...props} />} />
             </>
         )

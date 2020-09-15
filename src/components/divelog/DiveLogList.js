@@ -13,10 +13,19 @@ useEffect(() => {
 }, [])
 
 return(
+    <>
+    <h2>Dashboard</h2>
     <div className="recentDives">
         <div className="recentDivesTop">
         <h4>Recent Dives</h4>
-        <button className="viewAllBtn">View All</button> 
+        <Link to={{
+    pathname: `/divelog/all`,
+        }}>
+        <p className="viewAllBtn">View All</p>
+        </Link>
+        
+        <p className="addLogBtn">+</p> 
+        
         </div>
         <article className= "logListContainer">
             {
@@ -41,6 +50,7 @@ return(
             }
         </article>
     </div>
+    </>
 )
 
 
