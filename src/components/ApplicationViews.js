@@ -2,6 +2,7 @@ import React from "react"
 import {Route} from "react-router-dom"
 import { DiveLogProvider } from "./divelog/DiveLogProvider"
 import { DiveLogList } from "./divelog/DiveLogList"
+import { DiveLogAll } from "./divelog/DiveLogAll"
 
 
 export const ApplicationViews = () =>{
@@ -16,7 +17,7 @@ export const ApplicationViews = () =>{
                             props => <DiveLogDetail {...props} />
                         } /> */}
                         <Route exact path="/divelog/all">
-                            
+                            <DiveLogAll />
                         </Route>
             </DiveLogProvider>
 
