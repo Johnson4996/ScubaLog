@@ -11,6 +11,10 @@ export const DiveLogAll = () =>{
 
     return(
         <>
+        <Link className="log-link"
+        to={{ pathname: `/`,}}>
+            <button>Dashboard</button>
+            </Link>
             <h2>All Dives</h2>
             <div className="allDiveLogs">
             {
