@@ -24,7 +24,11 @@ export const DiveLogList = () => {
                         <p className="viewAllBtn">View All</p>
                     </Link>
 
-                    <p className="addLogBtn">+</p>
+                    <Link to={{
+                        pathname: `/divelog/new`,
+                    }}>
+                        <p className="addLogBtn">+</p>
+                    </Link>
 
                 </div>
                 <article className="logListContainer">
