@@ -28,6 +28,9 @@ export const ApplicationViews = () => {
                         <Route exact path="/divelog/new" render={(props) => {
                             return <DiveLogForm {...props} />
                         }} />
+                        <Route path="/divelog/edit/:diveLogId(\d+)" render={
+                            props => <DiveLogForm {...props} />
+                        } />
                     </TankTypeProvider>
                 </SuitTypeProvider>
             </DiveLogProvider>

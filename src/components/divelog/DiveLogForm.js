@@ -112,11 +112,11 @@ export const DiveLogForm = (props) => {
 
     return (
         <form className="diveLogForm">
-            <h2 className="animalForm__title">{editMode ? "Update Log" : "New Log"}</h2>
+            <h2 className="diveLogForm__title">{editMode ? "Update Log" : "New Log"}</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="name">Title: </label>
-                    <input type="text" name="name" required autoFocus className="form-control"
+                    <label htmlFor="title">Title: </label>
+                    <input type="text" name="title" required autoFocus className="form-control"
                         placeholder="Title"
                         defaultValue={diveLog.title}
                         onChange={handleControlledInputChange}

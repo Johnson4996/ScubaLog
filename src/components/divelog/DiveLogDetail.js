@@ -12,7 +12,7 @@ export const DiveLogDetail = (props) => {
     return (
         <>
             <DiveLog key={diveLog.id} diveLog={diveLog} />
-            <button>Edit Log</button>
+            <button onClick={() => {props.history.push(`/divelog/edit/${diveLog.id}`)}}>Edit Log</button>
             <button onClick={() => deleteLog(diveLog.id).then(() => props.history.push("/divelog/all"))}>Delete Log</button>
         </>
     )
