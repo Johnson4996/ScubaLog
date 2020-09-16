@@ -8,7 +8,7 @@ export const SuitTypeProvider = (props) => {
 
     const getSuitTypes = () => {
         return fetch("http://localhost:8088/suittypes")
-            .then(res => res.json)
+            .then(res => res.json())
             .then(setSuitTypes)
     }
 
@@ -22,7 +22,7 @@ export const SuitTypeProvider = (props) => {
 
     return (
         <SuitContext.Provider value={{
-            suitTypes
+            suitTypes, getSuitTypes
         }}>
             {props.children}
         </SuitContext.Provider>

@@ -17,7 +17,13 @@ export const DiveLogAll = () =>{
             </Link>
             <h2>All Dives</h2>
             <div className="allDiveLogs">
+            <Link className="log-link"
+        to={{ pathname: `/divelog/new`,}}>
+            <div>Add New Log</div>
+            </Link>
             {
+
+                
                 diveLogs.reverse().map(dl => {
                   
                         if(dl.userId === parseInt(localStorage.getItem("activeUser"))){
@@ -35,7 +41,7 @@ export const DiveLogAll = () =>{
                             </Link>
                                 )
                         }
-                    
+                
                     
                 })
             }
