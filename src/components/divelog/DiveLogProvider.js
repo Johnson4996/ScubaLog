@@ -12,13 +12,13 @@ export const DiveLogProvider = (props) => {
             .then(setDiveLogs)
     }
 
-    const addDiveLog = (divelog) => {
+    const addDiveLog = (diveLog) => {
         return fetch("http://localhost:8088/divelogs", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(divelog)
+            body: JSON.stringify(diveLog)
         })
             .then(getDiveLogs)
     }
@@ -26,6 +26,17 @@ export const DiveLogProvider = (props) => {
     const deleteLog = (logId) => {
         return fetch(`http://localhost:8088/divelogs/${logId}`, {
             method: "DELETE"
+        })
+            .then(getDiveLogs)
+    }
+
+    const editLog = (diveLog) => {
+        return fetch(`http://localhost:8088/divelogs/${diveLog.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(diveLog)
         })
             .then(getDiveLogs)
     }
@@ -40,7 +51,7 @@ export const DiveLogProvider = (props) => {
 
     return (
         <LogContext.Provider value={{
-            diveLogs, addDiveLog, getDiveLogs, deleteLog
+            diveLogs, addDiveLog, getDiveLogs, deleteLog, editLog
         }}>
             {props.children}
         </LogContext.Provider>

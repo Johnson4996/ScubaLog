@@ -8,7 +8,7 @@ export const TankTypeProvider = (props) => {
 
     const getTankTypes = () => {
         return fetch("http://localhost:8088/tanktypes")
-            .then(res => res.json)
+            .then(res => res.json())
             .then(setTankTypes)
     }
 
@@ -22,7 +22,7 @@ export const TankTypeProvider = (props) => {
 
     return (
         <TankContext.Provider value={{
-            tankTypes
+            tankTypes, getTankTypes
         }}>
             {props.children}
         </TankContext.Provider>
