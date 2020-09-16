@@ -3,6 +3,7 @@ import {Route} from "react-router-dom"
 import { DiveLogProvider } from "./divelog/DiveLogProvider"
 import { DiveLogList } from "./divelog/DiveLogList"
 import { DiveLogAll } from "./divelog/DiveLogAll"
+import { DiveLogDetail } from "./divelog/DiveLogDetail"
 
 
 export const ApplicationViews = () =>{
