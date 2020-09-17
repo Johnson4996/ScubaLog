@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 
-export const WishlistContext = React.createContext()
+export const WishContext = React.createContext()
 
 
 export const WishlistProvider = (props) => {
@@ -8,7 +8,7 @@ export const WishlistProvider = (props) => {
 
     const getWishes = () => {
         return fetch("http://localhost:8088/wishlist")
-            .then(res => res.json)
+            .then(res => res.json())
             .then(setWishes)
     }
 
@@ -19,6 +19,12 @@ export const WishlistProvider = (props) => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(wish)
+        })
+            .then(getWishes)
+    }
+    const deleteWish = (wishId) => {
+        return fetch(`http://localhost:8088/wishlist/${wishId}`, {
+            method: "DELETE"
         })
             .then(getWishes)
     }
@@ -33,7 +39,7 @@ export const WishlistProvider = (props) => {
 
     return (
         <WishContext.Provider value={{
-            wishes, setWishes
+            wishes, setWishes, addWish, getWishes, deleteWish
         }}>
             {props.children}
         </WishContext.Provider>

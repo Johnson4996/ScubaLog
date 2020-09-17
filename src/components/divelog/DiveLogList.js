@@ -14,7 +14,6 @@ export const DiveLogList = () => {
 
     return (
         <>
-            <h2>Dashboard</h2>
             <div className="recentDives">
                 <div className="recentDivesTop">
                     <h4>Recent Dives</h4>

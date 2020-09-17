@@ -1,0 +1,12 @@
+.wish--info{
+    display:flex;
+    
+}
+
+.wishlist--title{
+    display: flex;
+}
+
+#addWishBtn, #deleteWishBtn{
+    cursor: pointer;
+}
