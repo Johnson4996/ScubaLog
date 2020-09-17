@@ -23,3 +23,7 @@ button{
     height: 8rem;
     width:auto;
 }
+
+.container{
+    display:flex;
+}
