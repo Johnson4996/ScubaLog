@@ -9,6 +9,7 @@ import { SuitTypeProvider } from "./suittype/SuitTypeProvider"
 import { TankTypeProvider } from "./tanktype/TankTypeProvider"
 import { WishlistProvider } from "./wishlist/WishlistProvider"
 import { WishListRender } from "./wishlist/WishRender"
+import { WishListForm } from "./wishlist/WishListForm"
 
 
 export const ApplicationViews = () => {
@@ -38,6 +39,9 @@ export const ApplicationViews = () => {
                         }} />
                         <Route path="/divelog/edit/:diveLogId(\d+)" render={
                             props => <DiveLogForm {...props} />
+                        } />
+                        <Route exact path="/wishlist/new" render={
+                            props => <WishListForm {...props} />
                         } />
                     </TankTypeProvider>
                 </SuitTypeProvider>

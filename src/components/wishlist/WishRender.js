@@ -1,19 +1,23 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext} from "react"
 import { WishContext } from "./WishlistProvider"
 import "./wishlist.css"
+import { Link } from "react-router-dom"
 
 
-export const WishListRender = () => {
+
+
+export const WishListRender = (props) => {
     const { wishes, getWishes, deleteWish } = useContext(WishContext)
 
     return (
         <div className="wishList">
             <div className="wishlist--title">
             <h2>Wishlist</h2>
-            <dialog>
-                
-            </dialog>
-            <p id="addWishBtn">+</p>
+            <Link to={{
+                        pathname: `/wishlist/new`,
+                    }}>
+                        <p id="addWishBtn">+</p>
+                    </Link>
             </div>
             <article className="wishListContainer">
                 {
