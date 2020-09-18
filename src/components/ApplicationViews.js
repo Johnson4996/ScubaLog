@@ -21,7 +21,6 @@ export const ApplicationViews = () => {
             <DiveLogProvider>
                 <SuitTypeProvider>
                     <TankTypeProvider>
-                    <h2>Dashboard</h2>
                     <div className="container">
                         <Route exact path="/">
                             <DiveLogList />
