@@ -1,12 +1,17 @@
 import React, { useContext, useEffect, useState } from "react"
 import {LogContext} from "../divelog/DiveLogProvider"
-import {Map} from "mapbox-gl"
+import { GoogleApiWrapper, Map } from "google-maps-react"
+import Settings from "../Settings.js"
 
 
-export const MapRender = (props) =>{
+
+export const MapRenderLat = (props) =>{
     const {diveLogs} = useContext(LogContext)
     const [latLong, setLatLong] = useState([])
-    const []
+    
+    GoogleApiWrapper({
+      apiKey: `${Settings.apiKey}`
+    })(MapRender)
     
     let allLatLong = []
 
@@ -22,7 +27,12 @@ export const MapRender = (props) =>{
 
    
     return (
-        <Map>
+      <div className="mapContainer">
+        <Map
+        google={props.google}>
 
         </Map>
+      </div>
     )
+}
+

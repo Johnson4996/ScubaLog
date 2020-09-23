@@ -10,7 +10,7 @@ import { TankTypeProvider } from "./tanktype/TankTypeProvider"
 import { WishlistProvider } from "./wishlist/WishlistProvider"
 import { WishListRender } from "./wishlist/WishRender"
 import { WishListForm } from "./wishlist/WishListForm"
-import { MapRender } from "./map/Map"
+import { MapRender } from "./map/MapRender"
 import { GeoCodeProvider } from "./map/GeoCodeProvider"
 
 

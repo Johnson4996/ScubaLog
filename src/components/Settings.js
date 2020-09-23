@@ -4,7 +4,7 @@ export default {
     longitudeForFocusingMap: 0.0098,
     markerLongitude: 51.4934,
     markerLatitude: 0.0098,
-    apiKey: 'AIzaSyAmCkZ0Bi3zHwcxTWRutE0aypAHghsknPE',
+    apiKey: 'AIzaSyCB_EW3RlzQLyuQNgVN0ShLqcoCrEK2ptI',
     useDefaultUI: false,
     googleMapsMarkerIcon: 'marker icon link'
 };
