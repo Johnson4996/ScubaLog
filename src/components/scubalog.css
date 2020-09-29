@@ -18,10 +18,12 @@ button{
     color: #7796CB
 }
 
-
+.header{
+    height:10rem;
+}
 .logo{
-    height: 8rem;
-    width:auto;
+    height: 11rem;
+    width:12rem;
 }
 
 .container{

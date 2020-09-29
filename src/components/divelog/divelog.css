@@ -1,25 +1,40 @@
 .recentDives{
-    width: 25rem;
+    width: 35rem;
     overflow-y: scroll;
     height:20rem;
     margin-left: 1rem;
+    margin-right: 5rem;
+    margin-bottom: 4rem;
     padding:1rem;
     background-color: rgb(77,76,76,.7);
     border-radius: 5px;
+    position: relative;
 }
 
 .recentDivesTop{
     display: flex;
     flex-direction: row;
-    
-    
+}
+
+#logListItem{
+    border-bottom: 1px solid white;
 }
 
 .viewAllBtn{
-    margin-left: auto;
+    margin-left: 17rem;
     background: none;
     border: none;
     text-decoration: underline;
+    color: #7796CB;
+}
+.addLogBtn, a{
+margin-left: 1rem;
+text-decoration: none;
+
+}
+.addLogBtn{
+    color: #FAF0E6;
+    font-weight: 900;
 }
 
 .log-link{
