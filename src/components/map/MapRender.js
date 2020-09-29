@@ -1,69 +1,82 @@
 import React, { useContext, useEffect, useState } from 'react';
-import {GoogleMap, useLoadScript, Marker} from "@react-google-maps/api"
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api"
 import Settings from "../Settings"
 import mapSyles from "./MapStyles"
 import { LogContext } from '../divelog/DiveLogProvider';
 
 export const MapRender =(props) => {
     const {diveLogs} = useContext(LogContext)
-    const [latLong, setLatLong] = useState([])
+    const [latLong, setLatLong] = useState()
+    
+
     
     useEffect(()=>{
+        //Taking the logs and running them through API to get lat and lng for each location 
+        let latLongs = []
         diveLogs.map(dl =>{
-            return fetch(`https://api.opencagedata.com/geocode/v1/json?q=${dl.location}&key=7706b1cbc9874da9a15331f9bf55b3f2&limit=1`)
+            return fetch(`http://api.positionstack.com/v1/forward?access_key=ff0fcd042ab984146219abc275c71e4b&query=${dl.location}&limit=1
+            `)
                 .then(res => res.json())
-                .then(parsedRes => setLatLong([parsedRes.results[0].geometry]))
-            
-            
+                .then(parsedRes => {
+                    setLatLong( prevLatLongs => [...prevLatLongs ,parsedRes.data[0]] )
+                    
+                  })
+
+
         })
+        setLatLong(latLongs)
+        console.log(latLong)
     },[diveLogs])
 
-
-
-
-
-   const {isLoaded, loadError} = useLoadScript({
-       googleMapsApiKey: Settings.apiKey
-   })
-
-   const mapContainerStyle = {
-       width:'31rem',
-       height: '24rem'
-   }
-
-   const center = {
-       lat: 0,
-       lng: 0
-   }
-
-   const options = {
-    styles: mapSyles,
-    disableDefaultUI: true
-   }
-
-   
-  
-   if(loadError) console.log("error loading maps")
-   if(!isLoaded) return "Loading..."
+// this returns several logs, the first of which are empty arrays and the last are correct with the data that I need
     
-    return(
+
+    
+
+
+    const { isLoaded, loadError } = useLoadScript({
+        googleMapsApiKey: Settings.apiKey
+    })
+
+    const mapContainerStyle = {
+        width: '31rem',
+        height: '24rem'
+    }
+
+    const center = {
+        lat: 0,
+        lng: 0
+    }
+
+    const options = {
+        styles: mapSyles,
+        disableDefaultUI: true
+    }
+
+
+    
+    if (loadError) console.log("error loading maps")
+    if (!isLoaded) return "Loading..."
+
+    return (
         <div>
-            <GoogleMap 
-            mapContainerStyle={mapContainerStyle}
-            options = {options}
-             zoom={1}
-             center={center}
+            <GoogleMap
+                mapContainerStyle={mapContainerStyle}
+                options={options}
+                zoom={1}
+                center={center}
             >
+                
                 {
+                    //this is where I map through the state variable
                     latLong.map(l =>(
                      <Marker key={l.lat}
-                         position ={{lat: l.lat, lng: l.lng}} 
+                         position ={{lat: l.latitude, lng: l.longitude}} 
                          />
                     ))
                 }
             </GoogleMap>
         </div>
     )
-  }
-  
- 
+}
+

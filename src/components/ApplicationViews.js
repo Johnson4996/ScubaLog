@@ -11,14 +11,14 @@ import { WishlistProvider } from "./wishlist/WishlistProvider"
 import { WishListRender } from "./wishlist/WishRender"
 import { WishListForm } from "./wishlist/WishListForm"
 import { MapRender } from "./map/MapRender"
-import { GeoCodeProvider } from "./map/GeoCodeProvider"
+
 
 
 export const ApplicationViews = () => {
     return (
         <>
 
-            <GeoCodeProvider>
+        
                 <WishlistProvider>
                     <DiveLogProvider>
                         <SuitTypeProvider>
@@ -50,7 +50,7 @@ export const ApplicationViews = () => {
                         </SuitTypeProvider>
                     </DiveLogProvider>
                 </WishlistProvider>
-            </GeoCodeProvider>
+         
 
         </>
 
