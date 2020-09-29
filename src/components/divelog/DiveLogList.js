@@ -33,8 +33,9 @@ export const DiveLogList = () => {
                 <article className="logListContainer">
                     {
                         diveLogs.reverse().map(dl => {
+                            if (dl.userId === parseInt(localStorage.getItem("activeUser"))) {
                             for (let i = 0; i <= 5; i++) {
-                                if (dl.userId === parseInt(localStorage.getItem("activeUser"))) {
+                                
                                     return (
                                         <Link className="log-link"
                                             to={{

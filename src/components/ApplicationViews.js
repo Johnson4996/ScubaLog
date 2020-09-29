@@ -10,44 +10,47 @@ import { TankTypeProvider } from "./tanktype/TankTypeProvider"
 import { WishlistProvider } from "./wishlist/WishlistProvider"
 import { WishListRender } from "./wishlist/WishRender"
 import { WishListForm } from "./wishlist/WishListForm"
+import { MapRender } from "./map/MapRender"
+
 
 
 export const ApplicationViews = () => {
     return (
         <>
-        
-        
-        <WishlistProvider>
-            <DiveLogProvider>
-                <SuitTypeProvider>
-                    <TankTypeProvider>
-                    <h2>Dashboard</h2>
-                    <div className="container">
-                        <Route exact path="/">
-                            <DiveLogList />
-                            <WishListRender />
-                        </Route>
-                        </div>
-                        <Route path="/divelog/:diveLogId(\d+)" render={
-                            props => <DiveLogDetail {...props} />
-                        } />
-                        <Route exact path="/divelog/all">
-                            <DiveLogAll />
-                        </Route>
-                        <Route exact path="/divelog/new" render={(props) => {
-                            return <DiveLogForm {...props} />
-                        }} />
-                        <Route path="/divelog/edit/:diveLogId(\d+)" render={
-                            props => <DiveLogForm {...props} />
-                        } />
-                        <Route exact path="/wishlist/new" render={
-                            props => <WishListForm {...props} />
-                        } />
-                    </TankTypeProvider>
-                </SuitTypeProvider>
-            </DiveLogProvider>
-        </WishlistProvider>
 
+        
+                <WishlistProvider>
+                    <DiveLogProvider>
+                        <SuitTypeProvider>
+                            <TankTypeProvider>
+                                <h2>Dashboard</h2>
+                                <div className="container">
+                                    <Route exact path="/">
+                                        <DiveLogList />
+                                        <MapRender />
+                                        <WishListRender />
+                                    </Route>
+                                </div>
+                                <Route path="/divelog/:diveLogId(\d+)" render={
+                                    props => <DiveLogDetail {...props} />
+                                } />
+                                <Route exact path="/divelog/all">
+                                    <DiveLogAll />
+                                </Route>
+                                <Route exact path="/divelog/new" render={(props) => {
+                                    return <DiveLogForm {...props} />
+                                }} />
+                                <Route path="/divelog/edit/:diveLogId(\d+)" render={
+                                    props => <DiveLogForm {...props} />
+                                } />
+                                <Route exact path="/wishlist/new" render={
+                                    props => <WishListForm {...props} />
+                                } />
+                            </TankTypeProvider>
+                        </SuitTypeProvider>
+                    </DiveLogProvider>
+                </WishlistProvider>
+         
 
         </>
 
