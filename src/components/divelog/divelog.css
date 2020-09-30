@@ -40,11 +40,25 @@ text-decoration: none;
 .log-link{
     text-decoration: none;
     color:black;
+  
+  
+    
+}
+.log-link-all{
+    text-decoration: none;
+    color:black;
+    height:10rem;
+    width: 10rem;
+    background-color: rgb(77,76,76,.7);
+    margin-top: 1rem;
+    padding:3px;
+    text-align: center;
 }
 
 .allDiveLogs{
     width:100%;
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
     
 }
+

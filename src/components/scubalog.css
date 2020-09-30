@@ -19,13 +19,18 @@ button{
 }
 
 .header{
-    height:10rem;
+    height:5rem;
 }
 .logo{
-    height: 11rem;
-    width:12rem;
+    height: 10rem;
+    width:10rem;
+    margin-top: -2rem;
 }
 
 .container{
     display:flex;
+}
+
+.map{
+    height: 30rem;
 }

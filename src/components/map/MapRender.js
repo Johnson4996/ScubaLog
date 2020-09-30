@@ -39,8 +39,8 @@ export const MapRender =(props) => {
     })
 
     const mapContainerStyle = {
-        width: '40rem',
-        height: '24rem',
+        width: '35rem',
+        height: '22rem',
         margin: 'auto'
         
     }

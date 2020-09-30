@@ -19,4 +19,13 @@ code {
 
 .top-content{
   display: flex;
+  margin-bottom: -6rem;
+}
+.line{
+  height: 2px;
+  width: 60%;
+  background-color: #7796cb;
+  border-radius: 5px;
+  margin-top: -21px;
+  margin-bottom: 30px;
 }
