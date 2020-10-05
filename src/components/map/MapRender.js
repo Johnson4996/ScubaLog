@@ -10,23 +10,23 @@ export const MapRender =(props) => {
     
 
     
-    // useEffect(()=>{
-    //     //Taking the logs and running them through API to get lat and lng for each location 
-    //     let latLongs = []
-    //     diveLogs.map(dl =>{
-    //         return fetch(`http://api.positionstack.com/v1/forward?access_key=ff0fcd042ab984146219abc275c71e4b&query=${dl.location}&limit=1
-    //         `)
-    //             .then(res => res.json())
-    //             .then(parsedRes => {
-    //                 setLatLong( prevLatLongs => [...prevLatLongs ,parsedRes.data[0]] )
+    useEffect(()=>{
+        //Taking the logs and running them through API to get lat and lng for each location 
+        let latLongs = []
+        diveLogs.map(dl =>{
+            return fetch(`http://api.positionstack.com/v1/forward?access_key=ff0fcd042ab984146219abc275c71e4b&query=${dl.location}&limit=1
+            `)
+                .then(res => res.json())
+                .then(parsedRes => {
+                    setLatLong( prevLatLongs => [...prevLatLongs ,parsedRes.data[0]] )
                     
-    //               })
+                  })
 
 
-    //     })
-    //     setLatLong(latLongs)
-    //     console.log(latLong)
-    // },[diveLogs])
+        })
+        setLatLong(latLongs)
+        console.log(latLong)
+    },[diveLogs])
 
 // this returns several logs, the first of which are empty arrays and the last are correct with the data that I need
     
@@ -69,14 +69,14 @@ export const MapRender =(props) => {
                 center={center}
             >
                 
-                {/* {
+                {
                     //this is where I map through the state variable
                     latLong.map(l =>(
                      <Marker key={l.lat}
                          position ={{lat: l.latitude, lng: l.longitude}} 
                          />
                     ))
-                } */}
+                }
             </GoogleMap>
         </div>
     )

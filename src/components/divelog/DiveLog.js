@@ -35,7 +35,7 @@ export const DiveLog = ({ diveLog }) => {
                             <h3>Tank Info</h3>
                             <p>Air Enter: {diveLog.airEnter}</p>
                             <p>Air Exit: {diveLog.airExit}</p>
-                            <p>Tank Size: {diveLog.tankSize}cu</p>
+                            <p>Tank Size: {diveLog.tankSize}cu. ft</p>
                             <p>Tank Type: {foundTank}</p>
                         </div>
                         <div className="suitInfo">
@@ -47,17 +47,19 @@ export const DiveLog = ({ diveLog }) => {
                     <div className="weatherComments">
                         <h3>Other Info</h3>
                         <div className="wContainer">
-                        <p>Weather Conditions: {diveLog.weatherConditions}</p>
-                        <p>Comments: {diveLog.comments}</p>
+                            <p>Weather Conditions: {diveLog.weatherConditions}</p>
+                            <p>Comments: {diveLog.comments}</p>
                         </div>
-                    
                     </div>
-                    
+
                 </section>
             </div>
-            <p>{diveLog.verifyName}</p>
-                    <p>{diveLog.verifyCert}</p>
-                    <p>{diveLog.verifyType}</p>
+            <div className="buddyInfo">
+                <h3>Verification</h3>
+            <p> Buddy Type: {diveLog.verifyType}</p>
+            <p>Name: {diveLog.verifyName}</p>
+            <p>Cert #: {diveLog.verifyCert}</p>
+            </div>
         </>
     )
 }

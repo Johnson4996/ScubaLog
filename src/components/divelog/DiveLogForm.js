@@ -257,7 +257,7 @@ export const DiveLogForm = (props) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="weight">Weight: </label>
-                    <input type="text" name="treatment" className="form-control"
+                    <input type="text" name="weight" className="form-control"
                         value={diveLog.weight}
                         onChange={handleControlledInputChange}>
                     </input>

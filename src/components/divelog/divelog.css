@@ -159,3 +159,11 @@ text-decoration: none;
     flex-direction: column;
     
 }
+
+.buddyInfo{
+    display: flex;
+    justify-content: space-around;
+    margin:1rem;
+    background-color: rgb(77,76,76,.7);
+    border-radius: 5px;
+}
