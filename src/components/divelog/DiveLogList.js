@@ -16,7 +16,7 @@ export const DiveLogList = () => {
         <>
             <div className="recentDives">
                 <div className="recentDivesTop">
-                    <h4>Recent Dives</h4>
+                    <h3>Recent Dives</h3>
                     <Link to={{
                         pathname: `/divelog/all`,
                     }}>
@@ -42,7 +42,7 @@ export const DiveLogList = () => {
                                                 pathname: `/divelog/${dl.id}`,
                                                 state: { chosenLog: dl }
                                             }}>
-                                            <section className={dl.id}>
+                                            <section id="logListItem" className={dl.id}>
                                                 <h3 className="logTitle">{dl.title}</h3>
                                                 <p className="log--date">{dl.date}</p>
                                                 <p className="log--location">{dl.location}</p>

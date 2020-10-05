@@ -16,10 +16,11 @@ export const DiveLogAll = () =>{
             <button>Dashboard</button>
             </Link>
             <h2>All Dives</h2>
+            <div className="line"></div>
             <div className="allDiveLogs">
             <Link className="log-link"
         to={{ pathname: `/divelog/new`,}}>
-            <div>Add New Log</div>
+            <div className="addNewLog"><p>Add New Log</p></div>
             </Link>
             {
 
@@ -28,7 +29,7 @@ export const DiveLogAll = () =>{
                   
                         if(dl.userId === parseInt(localStorage.getItem("activeUser"))){
                             return(
-                                <Link className="log-link"
+                                <Link className="log-link-all"
                                 to={{
                                     pathname: `/divelog/${dl.id}`,
                                     state: { chosenLog: dl }

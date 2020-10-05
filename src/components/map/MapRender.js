@@ -39,13 +39,15 @@ export const MapRender =(props) => {
     })
 
     const mapContainerStyle = {
-        width: '31rem',
-        height: '24rem'
+        width: '35rem',
+        height: '22rem',
+        margin: 'auto'
+        
     }
 
     const center = {
-        lat: 0,
-        lng: 0
+        lat: 20.379131,
+        lng: -20
     }
 
     const options = {
@@ -59,11 +61,11 @@ export const MapRender =(props) => {
     if (!isLoaded) return "Loading..."
 
     return (
-        <div>
+        <div className="map">
             <GoogleMap
                 mapContainerStyle={mapContainerStyle}
                 options={options}
-                zoom={1}
+                zoom={2}
                 center={center}
             >
                 

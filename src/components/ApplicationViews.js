@@ -23,14 +23,25 @@ export const ApplicationViews = () => {
                     <DiveLogProvider>
                         <SuitTypeProvider>
                             <TankTypeProvider>
-                                <h2>Dashboard</h2>
-                                <div className="container">
+                            
+                                
+                                    
                                     <Route exact path="/">
+                                    <h2>Dashboard</h2>
+                                <div className="line"></div>
+                                    <div className="container">
+                                    <div className="top-content">
+                                        
                                         <DiveLogList />
                                         <MapRender />
+                                    </div>
+                                    <div className="bottom-content">
                                         <WishListRender />
+                                     </div>
+                                     </div>
                                     </Route>
-                                </div>
+                                    
+                                
                                 <Route path="/divelog/:diveLogId(\d+)" render={
                                     props => <DiveLogDetail {...props} />
                                 } />
