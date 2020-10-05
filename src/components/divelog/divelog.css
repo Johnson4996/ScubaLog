@@ -62,3 +62,100 @@ text-decoration: none;
     
 }
 
+.diveLogDetailsContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.detailsLeft{
+    margin:2rem;
+    width:100%;
+    height:28rem;
+    background-image: url("../images/LogImg.png");
+    background-size: 100%;
+    background-position: center;
+    
+}
+.detailsRight{
+    display: flex;
+    width: 100%;
+    border-top: 1px white solid;
+}
+
+
+.dlSi, .dlPgEnter, .dlPgExit, .dlBt, .dlMaxDepth, .dlAvgDepth{
+    position: relative;
+}
+
+.dlSi{
+    top: 70px;
+    left: 8px;
+}
+
+.dlPgEnter{
+    top: 2rem;
+    left: 9rem;
+}
+
+.dlBt{
+    top: 44%;
+    left: 40%;
+}
+
+.dlAvgDepth{
+    left:7rem;
+}
+.dlMaxDepth{
+    bottom: -155px;
+    left: 250px;
+
+}
+
+.dlPgExit{
+    left: 70%;
+}
+
+
+.infoContent{
+    width:50%;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin:auto;
+    padding: 2rem;
+}
+
+.tankInfo{
+    background-color: rgb(77,76,76,.7);
+    width:100%;
+    border-radius: 5px;
+    padding:1rem;
+    
+}
+
+.suitInfo{
+    width:100%;
+    margin-top: 2rem;
+    padding:1rem;
+    border-radius: 5px;
+    background-color: rgb(77,76,76,.7);
+    
+}
+
+.weatherComments{
+    width:50%;
+    height: auto;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    padding:1rem;
+    background-color: rgb(77,76,76,.7);
+    border-radius: 5px;
+    
+}
+
+.wContainer{
+    display: flex;
+    flex-direction: column;
+    
+}
