@@ -1,5 +1,6 @@
 {
   "name": "capstone",
+  "homepage":"http://johnson4996.github.io/ScubaLog",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
