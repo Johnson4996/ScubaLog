@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f086a526502631898a3d2a62e0148d50",
+    "revision": "229728bba3be0f6bb46d61e715589cf3",
     "url": "/ScubaLog/index.html"
   },
   {
-    "revision": "98bbf91a205af5ecbbe3",
+    "revision": "2134e5f35f040b782d17",
     "url": "/ScubaLog/static/css/main.27a61d0d.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ScubaLog/static/js/2.5afbee7b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "98bbf91a205af5ecbbe3",
-    "url": "/ScubaLog/static/js/main.068c5ba4.chunk.js"
+    "revision": "2134e5f35f040b782d17",
+    "url": "/ScubaLog/static/js/main.8b64a802.chunk.js"
   },
   {
     "revision": "9f940539aca485d8218c",
