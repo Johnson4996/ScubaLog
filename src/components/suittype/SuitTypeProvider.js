@@ -12,7 +12,7 @@ export const SuitTypeProvider = (props) => {
     const [suitTypes, setSuitTypes] = useState([])
 
     const getSuitTypes = () => {
-        return fetch("http://localhost:8088/suittypes")
+        return fetch("https://my-json-server.typicode.com/johnson4996/scubalog-api/suittypes")
             .then(res => res.json())
             .then(setSuitTypes)
     }

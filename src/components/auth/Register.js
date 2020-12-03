@@ -25,7 +25,7 @@ export const Register = (props) => {
                 .then(() => {
                     
                     //POST new user to the database
-                    fetch("http://localhost:8088/users", {
+                    fetch("https://my-json-server.typicode.com/johnson4996/scubalog-api/users", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
