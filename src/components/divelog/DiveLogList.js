@@ -1,3 +1,6 @@
+//Lists users most recent dives on the dashboard
+
+
 import React, { useContext, useEffect } from "react"
 import { LogContext } from "./DiveLogProvider"
 import "./divelog.css"

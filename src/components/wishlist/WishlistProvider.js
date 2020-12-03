@@ -1,3 +1,6 @@
+
+//Data provider for wish list 
+
 import React, { useEffect, useState } from "react"
 
 export const WishContext = React.createContext()

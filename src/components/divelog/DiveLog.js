@@ -1,3 +1,8 @@
+
+// The full HTML rendering of a single Dive Log
+
+
+
 import React, { useContext } from "react"
 import { Link } from "react-router-dom"
 import { SuitContext } from "../suittype/SuitTypeProvider"
@@ -7,6 +12,8 @@ export const DiveLog = ({ diveLog }) => {
     const { suitTypes } = useContext(SuitContext)
     const { tankTypes } = useContext(TankContext)
 
+
+    //find tank and suit types from foreign key
     const foundSuit = suitTypes.map(s => s.id === diveLog.suitTypeId ? s.name : "")
     const foundTank = tankTypes.map(t => t.id === diveLog.tankTypeId ? t.name : "")
 

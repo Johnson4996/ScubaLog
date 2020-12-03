@@ -1,3 +1,7 @@
+
+//renders wish list to the dashboard
+
+
 import React, { useContext} from "react"
 import { WishContext } from "./WishlistProvider"
 import "./wishlist.css"

@@ -2,6 +2,8 @@ import React, { useRef } from "react"
 import "./Login.css"
 
 export const Register = (props) => {
+
+    //grab user inputs
     const firstName = useRef()
     const lastName = useRef()
     const email = useRef()
@@ -21,6 +23,8 @@ export const Register = (props) => {
         if (password.current.value === verifyPassword.current.value) {
             existingUserCheck()
                 .then(() => {
+                    
+                    //POST new user to the database
                     fetch("http://localhost:8088/users", {
                         method: "POST",
                         headers: {

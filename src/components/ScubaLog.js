@@ -3,7 +3,7 @@ import { ApplicationViews } from "./ApplicationViews"
 import { Route, Redirect } from "react-router-dom"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
-import logo from "../images/logo.png"
+import logo from "./images/logo.png"
 import "./scubalog.css"
 
 

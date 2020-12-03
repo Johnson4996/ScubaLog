@@ -1,3 +1,6 @@
+
+//handles users for tailored use in application
+
 import React, { useEffect, useState } from "react"
 
 export const UserContext = React.createContext()

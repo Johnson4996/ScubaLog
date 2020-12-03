@@ -1,3 +1,5 @@
+
+//Renders Map from google maps API
 import React, { useContext, useEffect, useState } from 'react';
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api"
 import Settings from "../Settings"
@@ -14,7 +16,7 @@ export const MapRender =(props) => {
         //Taking the logs and running them through API to get lat and lng for each location 
         let latLongs = []
         diveLogs.map(dl =>{
-            return fetch(`http://api.positionstack.com/v1/forward?access_key=ff0fcd042ab984146219abc275c71e4b&query=${dl.location}&limit=1
+            return fetch(`http://api.positionstack.com/v1/forward?access_key=${settings.posKey}&query=${dl.location}&limit=1
             `)
                 .then(res => res.json())
                 .then(parsedRes => {
@@ -28,14 +30,12 @@ export const MapRender =(props) => {
         console.log(latLong)
     },[diveLogs])
 
-// this returns several logs, the first of which are empty arrays and the last are correct with the data that I need
-    
 
-    
+
 
 
     const { isLoaded, loadError } = useLoadScript({
-        googleMapsApiKey: Settings.apiKey
+        googleMapsApiKey: Settings.mapsKey
     })
 
     const mapContainerStyle = {

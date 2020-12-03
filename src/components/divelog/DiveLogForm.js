@@ -1,3 +1,8 @@
+
+//contains all input for a single dive log with editing ability
+
+
+
 import React, {useContext, useState, useEffect} from "react"
 import {LogContext} from "./DiveLogProvider"
 import {SuitContext} from "../suittype/SuitTypeProvider"
@@ -13,9 +18,10 @@ export const DiveLogForm = (props) => {
    
     const [diveLog, setDiveLog] = useState({})
 
-   
+   //check if in edit mode
     const editMode = props.match.params.hasOwnProperty("diveLogId")  // true or false
 
+    //handle user input changes
     const handleControlledInputChange = (event) => {
         
         const newDiveLog = Object.assign({}, diveLog)          
@@ -23,7 +29,7 @@ export const DiveLogForm = (props) => {
         setDiveLog(newDiveLog)                                 
     }
 
-    
+    //grab the log requested in display in edit mode
     const getLogInEditMode = () => {
         if (editMode) {
             const diveLogId = parseInt(props.match.params.diveLogId)
@@ -44,7 +50,7 @@ export const DiveLogForm = (props) => {
         getLogInEditMode()
     }, [diveLogs])
 
-
+    //if in edit mode, PUT changes, otherwise POST a new log
     const constructNewLog = () => {
         const suitTypeId = parseInt(diveLog.suitTypeId)
         const tankTypeId = parseInt(diveLog.tankTypeId)

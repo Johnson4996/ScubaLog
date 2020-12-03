@@ -1,3 +1,7 @@
+
+
+//Handles creation of new wish list item by the user
+
 import React, { useContext, useRef } from "react"
 import {WishContext} from "./WishlistProvider"
 

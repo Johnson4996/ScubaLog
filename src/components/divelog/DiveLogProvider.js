@@ -1,3 +1,5 @@
+
+//Provider for dive logs, handles promises to database
 import React, { useEffect, useState } from "react"
 
 export const LogContext = React.createContext()

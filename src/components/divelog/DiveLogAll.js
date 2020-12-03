@@ -1,3 +1,6 @@
+
+//display all dive logs in the database for the current user
+
 import React, { useEffect, useContext } from "react"
 import {LogContext } from "./DiveLogProvider"
 import { Link } from "react-router-dom"

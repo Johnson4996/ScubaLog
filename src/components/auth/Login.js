@@ -1,14 +1,17 @@
 import React, { useRef } from "react"
 import { Link } from "react-router-dom";
 import "./Login.css"
-
+// Handles auth on front end 
 
 export const Login = props => {
+    //grab user inputs
     const email = useRef()
     const password = useRef()
     const existDialog = useRef()
     const passwordDialog = useRef()
+    
 
+    //check to see if user already exists
     const existingUserCheck = () => {
         return fetch(`http://localhost:8088/users?email=${email.current.value}`)
             .then(_ => _.json())
