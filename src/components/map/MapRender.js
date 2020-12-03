@@ -16,7 +16,7 @@ export const MapRender =(props) => {
         //Taking the logs and running them through API to get lat and lng for each location 
         let latLongs = []
         diveLogs.map(dl =>{
-            return fetch(`http://api.positionstack.com/v1/forward?access_key=${settings.posKey}&query=${dl.location}&limit=1
+            return fetch(`http://api.positionstack.com/v1/forward?access_key=${Settings.posKey}&query=${dl.location}&limit=1
             `)
                 .then(res => res.json())
                 .then(parsedRes => {
