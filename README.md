@@ -16,7 +16,7 @@ Other than React, ScubaLog only uses the Google Maps API to function.
 
 ### Installation
 
-[You can view the live pages site here](https://ScubaLog.onrender.com) 
+[You can view the live pages site here](https://scubalog.onrender.com) 
 
 To run this applicaiton from your local machine from terminal...
  1. Clone this GitHub repo 
