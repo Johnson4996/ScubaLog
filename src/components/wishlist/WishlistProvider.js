@@ -10,13 +10,13 @@ export const WishlistProvider = (props) => {
     const [wishes, setWishes] = useState([])
 
     const getWishes = () => {
-        return fetch("https://my-json-server.typicode.com/johnson4996/scubalog-api/wishlist")
+        return fetch("http://localhost:3000/wishlist")
             .then(res => res.json())
             .then(setWishes)
     }
 
     const addWish = (wish) => {
-        return fetch("https://my-json-server.typicode.com/johnson4996/scubalog-api/wishlist", {
+        return fetch("http://localhost:3000/wishlist", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -26,7 +26,7 @@ export const WishlistProvider = (props) => {
             .then(getWishes)
     }
     const deleteWish = (wishId) => {
-        return fetch(`https://my-json-server.typicode.com/johnson4996/scubalog-api/wishlist/${wishId}`, {
+        return fetch(`http://localhost:3000/wishlist/${wishId}`, {
             method: "DELETE"
         })
             .then(getWishes)
