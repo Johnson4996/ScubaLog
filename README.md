@@ -14,16 +14,10 @@ ScubaLog is a React application I created that allows SCUBA divers to log their 
 
 Other than React, ScubaLog only uses the Google Maps API to function.
 
-### Installation
+### Demo
 
 [You can view the live pages site here](https://scubalog.onrender.com) 
 
-To run this applicaiton from your local machine from terminal...
- 1. Clone this GitHub repo 
-```sh
-$ cd capstone
-$ npm start
-```
 
 
 
