@@ -25,11 +25,5 @@ $ cd capstone
 $ npm start
 ```
 
-You'll also want to make sure you're running the included JSON Server to make sure you can see data. In a seperate terminal tab youll need to [clone down the api repo.](https://github.com/Johnson4996/ScubaLog-api) 
 
-```sh
-$ cd capstone-api
-$ json-server -w database.json -p 8088
-```
-The application will be running on localhost:8000  
 
