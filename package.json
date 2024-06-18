@@ -19,12 +19,10 @@
     "react-scripts": "^5.0.1"
   },
   "scripts": {
-    "start": "react-scripts start --no-cache",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
-    "test": "react-scripts test --no-cache",
-    "eject": "react-scripts eject"
+    "start": "react-scripts start",
+    "serve": "serve -s build",
+    "start-api": "node api/server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
