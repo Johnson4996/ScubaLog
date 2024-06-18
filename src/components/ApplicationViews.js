@@ -14,9 +14,9 @@ import { WishListForm } from "./wishlist/WishListForm"
 
 
 
+
 export const ApplicationViews = () => {
     return (
-        <>
 
         
                 <WishlistProvider>
@@ -27,7 +27,10 @@ export const ApplicationViews = () => {
                                 
                                     
                                     <Route exact path="/">
+                                 <div className="dashboard-top">
                                     <h2>Dashboard</h2>
+                                </div>
+                                    
                                 <div className="line"></div>
                                     <div className="container">
                                     <div className="top-content">
@@ -61,9 +64,6 @@ export const ApplicationViews = () => {
                         </SuitTypeProvider>
                     </DiveLogProvider>
                 </WishlistProvider>
-         
-
-        </>
 
     )
 }

@@ -34,7 +34,7 @@ export const DiveLogAll = () => {
 
                         if (dl.userId === parseInt(localStorage.getItem("activeUser"))) {
                             return (
-                                <Link className="log-link-all"
+                                <Link key={dl.id} className="log-link-all"
                                     to={{
                                         pathname: `/divelog/${dl.id}`,
                                         state: { chosenLog: dl }

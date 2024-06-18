@@ -18,7 +18,6 @@ export const DiveLogList = () => {
     }, [])
 
     return (
-        <>
             <div className="recentDives">
                 <div className="recentDivesTop">
                     <h3>Recent Dives</h3>
@@ -39,22 +38,21 @@ export const DiveLogList = () => {
                     {
                         diveLogs.reverse().map(dl => {
                             if (dl.userId === parseInt(localStorage.getItem("activeUser"))) {
-                            for (let i = 0; i <= 5; i++) {
                                 
                                     return (
-                                        <Link className="log-link"
+                                        <Link className="log-link" key={dl.id}
                                             to={{
                                                 pathname: `/divelog/${dl.id}`,
                                                 state: { chosenLog: dl }
                                             }}>
-                                            <section id="logListItem" className={dl.id}>
+                                            <section id="logListItem"   className={dl.id}>
                                                 <h3 className="logTitle">{dl.title}</h3>
                                                 <p className="log--date">{dl.date}</p>
                                                 <p className="log--location">{dl.location}</p>
                                             </section>
                                         </Link>
                                     )
-                                }
+                                
 
                             }
 
@@ -63,7 +61,6 @@ export const DiveLogList = () => {
                     }
                 </article>
             </div>
-        </>
     )
 
 

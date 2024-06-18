@@ -20,11 +20,20 @@ button{
 
 .header{
     height:5rem;
+    display: flex;
+    justify-content: space-between;
 }
 .logo{
     height: 10rem;
     width:10rem;
     margin-top: -2rem;
+}
+
+.logout-btn{
+    margin-top: 1rem;
+    margin-right: 1rem;
+    background-color: #7796CB;
+    color: #FAF0E6
 }
 
 .container{

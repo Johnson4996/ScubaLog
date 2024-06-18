@@ -17,6 +17,10 @@ export const ScubaLog = () =>(
             <>
             <div className="header">
                 <img src={logo} className="logo" alt="logo" />
+                <button className="logout-btn" onClick={() => {
+                    localStorage.clear("activeUser")
+                    window.location.reload()
+                    }}>Logout</button>
             </div>
                 <Route render={props => <ApplicationViews {...props} />} />
             </>
