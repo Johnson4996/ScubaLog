@@ -1,39 +1,24 @@
-const initialDbPath = './api/db.json';
-const dbPath = '/var/data/db.json';
+// JSON Server module
+const jsonServer = require("json-server");
+const server = jsonServer.create();
+const router = jsonServer.router("db/db.json");
 
-const path = require('path');
-const fs = require('fs');
+// Make sure to use the default middleware
+const middlewares = jsonServer.defaults();
 
-if (!fs.existsSync(dbPath)) {
-    fs.copyFileSync(initialDbPath, dbPath);
-}
-
-const jsonServer = require('json-server')
-const server = jsonServer.create()
-const router = jsonServer.router(dbPath)
-const middlewares = jsonServer.defaults({
-    static: "./build"
+server.use(middlewares);
+// Add this before server.use(router)
+server.use(
+ // Add custom route here if needed
+ jsonServer.rewriter({
+  "/api/*": "/$1",
+ })
+);
+server.use(router);
+// Listen to port
+server.listen(3000, () => {
+ console.log("JSON Server is running");
 });
 
-const port = process.env.PORT || 8088
-
-server.use(middlewares)
-
-server.use((req, res, next) => {
-    // use originalUrl since other middleware is likely reassigning req.url
-    const isApiRoute = req.originalUrl.includes('/api/');
-
-    if (isApiRoute) return next();
-
-    return res.sendFile(path.join(__dirname, './build/index.html'));
-});
-
-server.use(jsonServer.rewriter({
-    "/api/*": "/$1"
-}))
-
-server.use(router)
-
-server.listen(port, () => {
-    console.log('JSON Server is running')
-})
+// Export the Server API
+module.exports = server;
