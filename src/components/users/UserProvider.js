@@ -10,13 +10,13 @@ export const UserProvider = (props) => {
     const [users, setUsers] = useState([])
 
     const getUsers = () => {
-        return fetch("https://scubalog.samjohnson.dev/users")
+        return fetch("https://scubalog.samjohnson.dev/api/users")
             .then(res => res.json)
             .then(setUsers)
     }
 
     const addUser = (user) => {
-        return fetch("https://scubalog.samjohnson.dev/users", {
+        return fetch("https://scubalog.samjohnson.dev/api/users", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

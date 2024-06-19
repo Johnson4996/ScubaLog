@@ -13,7 +13,7 @@ export const Login = props => {
 
     //check to see if user already exists
     const existingUserCheck = () => {
-        return fetch(`https://scubalog.samjohnson.dev/users?email=${email.current.value}`)
+        return fetch(`https://scubalog.samjohnson.dev/api/users?email=${email.current.value}`)
             .then(_ => _.json())
             .then(user => user.length ? user[0] : false)
     }
@@ -53,7 +53,7 @@ export const Login = props => {
                         <input ref={email} type="email"
                             id="email"
                             className="form-control"
-                            value="test@test.com"
+                            defaultValue="test@test.com"
                             required autoFocus/>
                     </fieldset>
                     <fieldset>
@@ -61,7 +61,7 @@ export const Login = props => {
                         <input ref={password} type="password"
                             id="password"
                             className="form-control"
-                            value={"test"}
+                            defaultValue={"test"}
                             required />
                     </fieldset>
                     <fieldset>

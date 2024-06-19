@@ -1,24 +1,45 @@
-// JSON Server module
-const jsonServer = require("json-server");
-const server = jsonServer.create();
-const router = jsonServer.router("api/db.json");
+const express = require("express");
+const fs = require("fs");
+const path = require("path");
 
-// Make sure to use the default middleware
-const middlewares = jsonServer.defaults();
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-server.use(middlewares);
-// Add this before server.use(router)
-server.use(
- // Add custom route here if needed
- jsonServer.rewriter({
-  "/api/*": "/$1",
- })
-);
-server.use(router);
-// Listen to port
-server.listen(3000, () => {
- console.log("JSON Server is running");
+// Middleware to parse JSON bodies
+app.use(express.json());
+
+// Load the database (db.json)
+const dbFilePath = path.join(__dirname, "db.json");
+let database = JSON.parse(fs.readFileSync(dbFilePath, "utf8"));
+
+// Utility function to save the database
+const saveDatabase = () => {
+  fs.writeFileSync(dbFilePath, JSON.stringify(database, null, 2));
+};
+
+// Routes
+app.get("/api/users", (req, res) => {
+  res.json(database.users);
 });
 
-// Export the Server API
-module.exports = server;
+app.post("/api/users", (req, res) => {
+  const newUser = req.body;
+  newUser.id = database.users.length ? database.users[database.users.length - 1].id + 1 : 1;
+  database.users.push(newUser);
+  saveDatabase();
+  res.status(201).json(newUser);
+});
+
+// Add more routes as needed
+
+
+app.use(express.static(path.join(__dirname, "build")));
+
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});

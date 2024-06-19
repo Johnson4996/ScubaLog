@@ -10,7 +10,7 @@ export const TankTypeProvider = (props) => {
     const [tankTypes, setTankTypes] = useState([])
 
     const getTankTypes = () => {
-        return fetch("https://scubalog.samjohnson.dev/tanktypes")
+        return fetch("https://scubalog.samjohnson.dev/api/tanktypes")
             .then(res => res.json())
             .then(setTankTypes)
     }
