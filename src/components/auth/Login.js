@@ -13,7 +13,7 @@ export const Login = props => {
 
     //check to see if user already exists
     const existingUserCheck = () => {
-        return fetch(`https://scubalog.samjohnson.dev/api/users?email=${email.current.value}`)
+        return fetch(`${process.env.REACT_APP_API_URL}/users?email=${email.current.value}`)
             .then(_ => _.json())
             .then(user => user.length ? user[0] : false)
     }

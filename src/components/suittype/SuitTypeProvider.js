@@ -12,7 +12,7 @@ export const SuitTypeProvider = (props) => {
     const [suitTypes, setSuitTypes] = useState([])
 
     const getSuitTypes = () => {
-        return fetch("https://scubalog.samjohnson.dev/api/suittypes")
+        return fetch(`${process.env.REACT_APP_API_URL}/suittypes`)
             .then(res => res.json())
             .then(setSuitTypes)
     }

@@ -347,6 +347,7 @@ export const DiveLogForm = (props) => {
                         props.history.push("/divelog/all")
                     }}
                     className="btn btn-primary btnCancel">
+                        Back to All Logs
                     
                 </button>
             </form>

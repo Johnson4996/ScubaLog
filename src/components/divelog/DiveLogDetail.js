@@ -15,7 +15,7 @@ export const DiveLogDetail = (props) => {
     const { diveLogs, deleteLog } = useContext(LogContext)
 
     const chosenDiveLog = parseInt(props.match.params.diveLogId)
-    const diveLog = diveLogs.find(l => l.id === chosenDiveLog.toString()) || {}
+    const diveLog = diveLogs.find(l => l.id === chosenDiveLog) || {}
 
 
     //send dive log to HTML rep componet and render buttons 

@@ -10,13 +10,13 @@ export const WishlistProvider = (props) => {
     const [wishes, setWishes] = useState([])
 
     const getWishes = () => {
-        return fetch("https://scubalog.samjohnson.dev/api/wishlist")
+        return fetch(`${process.env.REACT_APP_API_URL}/wishlist`)
             .then(res => res.json())
             .then(setWishes)
     }
 
     const addWish = (wish) => {
-        return fetch("https://scubalog.samjohnson.dev/api/wishlist", {
+        return fetch(`${process.env.REACT_APP_API_URL}/wishlist`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -26,7 +26,7 @@ export const WishlistProvider = (props) => {
             .then(getWishes)
     }
     const deleteWish = (wishId) => {
-        return fetch(`https://scubalog.samjohnson.dev/api/wishlist/${wishId}`, {
+        return fetch(`${process.env.REACT_APP_API_URL}/wishlist/${wishId}`, {
             method: "DELETE"
         })
             .then(getWishes)

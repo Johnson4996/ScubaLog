@@ -12,7 +12,7 @@ export const Register = (props) => {
     const passwordDialog = useRef()
 
     const existingUserCheck = () => {
-        return fetch(`https://scubalog.samjohnson.dev/api/users?email=${email.current.value}`)
+        return fetch(`${process.env.REACT_APP_API_URL}/users?email=${email.current.value}`)
             .then(_ => _.json())
             .then(user => !!user.length)
     }
@@ -25,7 +25,7 @@ export const Register = (props) => {
                 .then(() => {
                     
                     //POST new user to the database
-                    fetch("https://scubalog.samjohnson.dev/api/users", {
+                    fetch(`${process.env.REACT_APP_API_URL}/users`, {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"

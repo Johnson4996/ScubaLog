@@ -9,13 +9,13 @@ export const DiveLogProvider = (props) => {
     const [diveLogs, setDiveLogs] = useState([])
 
     const getDiveLogs = () => {
-        return fetch("https://scubalog.samjohnson.dev/api/divelogs")
+        return fetch(`${process.env.REACT_APP_API_URL}/divelogs`)
             .then(res => res.json())
             .then(setDiveLogs)
     }
 
     const addDiveLog = (diveLog) => {
-        return fetch("https://scubalog.samjohnson.dev/api/divelogs", {
+        return fetch(`${process.env.REACT_APP_API_URL}/divelogs`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -26,14 +26,14 @@ export const DiveLogProvider = (props) => {
     }
 
     const deleteLog = (logId) => {
-        return fetch(`https://scubalog.samjohnson.dev/api/divelogs/${logId}`, {
+        return fetch(`${process.env.REACT_APP_API_URL}/divelogs/${logId}`, {
             method: "DELETE"
         })
             .then(getDiveLogs)
     }
 
     const editLog = (diveLog) => {
-        return fetch(`https://scubalog.samjohnson.dev/api/divelogs/${diveLog.id}`, {
+        return fetch(`${process.env.REACT_APP_API_URL}/divelogs/${diveLog.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
