@@ -6,8 +6,7 @@ import React, { useContext} from "react"
 import { WishContext } from "./WishlistProvider"
 import "./wishlist.css"
 import { Link } from "react-router-dom"
-import AddCircleIcon from '@material-ui/icons/AddCircle';
-import DeleteIcon from '@material-ui/icons/Delete';
+
 
 
 
@@ -22,7 +21,7 @@ export const WishListRender = (props) => {
             <Link className="addWishLink"to={{
                         pathname: `/wishlist/new`,
                     }}>
-                        <AddCircleIcon className="wishBtn"/>
+                        <p className="wishBtn">Add new</p>
                     </Link>
             </div>
             <article className="wishListContainer">
@@ -33,7 +32,7 @@ export const WishListRender = (props) => {
                                 <section className={`wish--${w.id}`}>
                                     <div className="wish--info">
                                         <h4>{w.location}</h4>
-                                        <DeleteIcon className="wishBtn deleteWishBtn" onClick={()=> deleteWish(w.id)}></DeleteIcon>
+                                        <p className="wishBtn deleteWishBtn" onClick={()=> deleteWish(w.id)}>Delete</p>
                                     </div>
                                 </section>
                             )

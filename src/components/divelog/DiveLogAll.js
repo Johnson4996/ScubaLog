@@ -4,8 +4,8 @@
 import React, { useEffect, useContext } from "react"
 import { LogContext } from "./DiveLogProvider"
 import { Link } from "react-router-dom"
-import AddIcon from '@material-ui/icons/Add'
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+
+
 
 export const DiveLogAll = () => {
     const { diveLogs, getDiveLogs } = useContext(LogContext)
@@ -18,14 +18,14 @@ export const DiveLogAll = () => {
         <>
             <Link className="log-link"
                 to={{ pathname: `/`, }}>
-                <ArrowBackIosIcon/>
+                <p>back</p>
             </Link>
             <h2>All Dives</h2>
             <div className="line"></div>
             <div className="allDiveLogs">
                 <Link className="add-log-link"
                     to={{ pathname: `/divelog/new`, }}>
-                    <div className="plusIcon"><AddIcon fontSize="large"/><br/>Add New Dive Log</div>
+                    <div className="plusIcon"><br/>Add New Dive Log Plus icon</div>
                 </Link>
                 {
 

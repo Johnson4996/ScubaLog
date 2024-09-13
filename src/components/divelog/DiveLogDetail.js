@@ -6,9 +6,7 @@ import React, { useContext } from "react"
 import { LogContext } from "./DiveLogProvider"
 import { DiveLog } from "./DiveLog"
 import {Link} from "react-router-dom"
-import EditIcon from '@material-ui/icons/Edit';
-import DeleteIcon from '@material-ui/icons/Delete';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+
 
 
 export const DiveLogDetail = (props) => {
@@ -18,18 +16,18 @@ export const DiveLogDetail = (props) => {
     const diveLog = diveLogs.find(l => l.id === chosenDiveLog) || {}
 
 
-    //send dive log to HTML rep componet and render buttons 
+    //send dive log to HTML rep component and render buttons 
     return (
         <>
         <div className="backToDash">
         <Link className="log-link" to={{ pathname: `/`, }}>
-                <ArrowBackIosIcon/> 
+                <p>back</p>
             </Link>
             <p>Dashboard</p>
             </div>
             <div className="editDelContainer">
-            <EditIcon className="log-link editBtn" onClick={() => {props.history.push(`/divelog/edit/${diveLog.id}`)}}/>
-            <DeleteIcon className="log-link delBtn" onClick={() => deleteLog(diveLog.id).then(() => props.history.push("/divelog/all"))}/>
+            <p className="log-link editBtn" onClick={() => {props.history.push(`/divelog/edit/${diveLog.id}`)}}>Edit</p>
+            <p className="log-link delBtn" onClick={() => deleteLog(diveLog.id).then(() => props.history.push("/divelog/all"))}>Delete</p>
             </div>
             <DiveLog key={diveLog.id} diveLog={diveLog} />
             

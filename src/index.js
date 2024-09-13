@@ -1,17 +1,28 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
 import { ScubaLog } from './components/ScubaLog';
-import {BrowserRouter as Router} from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import { createRoot } from 'react-dom/client';
+
+
+
+const router = createBrowserRouter([
+{
+  path: "*",
+  element: <ScubaLog />,
+}
+]);
 
 
 
 
-
-ReactDOM.render(
- <Router>
-    <ScubaLog />
-    </Router>,
-  document.getElementById('root')
+createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+  
 );
 
