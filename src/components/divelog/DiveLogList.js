@@ -19,29 +19,22 @@ export const DiveLogList = () => {
     return (
             <div className="recentDives">
                 <div className="recentDivesTop">
-                    <h3>Recent Dives</h3>
+                    <h3>Dives</h3>
                     <Link className="viewAllBtnLink" to={{
-                        pathname: `/divelog/all`,
-                    }}>
-                        <p className="viewAllBtn">View all</p>
-                    </Link>
-
-                    <Link className="viewAllBtnLink" to={{
-                        pathname: `/divelog/new`,
+                        pathname: `/divelogs/new`,
                     }}>
                         <p className="addNewBtn">Add new</p> 
                     </Link>
+                    
 
                 </div>
                 <article className="logListContainer">
                     {
                         diveLogs.reverse().map(dl => {
-                            if (dl.userId === parseInt(localStorage.getItem("activeUser"))) {
-                                
                                     return (
                                         <Link className="log-link" key={dl.id}
                                             to={{
-                                                pathname: `/divelog/${dl.id}`,
+                                                pathname: `/divelogs/${dl.id}`,
                                                 state: { chosenLog: dl }
                                             }}>
                                             <section id="logListItem"   className={dl.id}>
@@ -51,11 +44,6 @@ export const DiveLogList = () => {
                                             </section>
                                         </Link>
                                     )
-                                
-
-                            }
-
-
                         })
                     }
                 </article>

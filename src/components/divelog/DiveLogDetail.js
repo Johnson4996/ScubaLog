@@ -5,15 +5,17 @@
 import React, { useContext } from "react"
 import { LogContext } from "./DiveLogProvider"
 import { DiveLog } from "./DiveLog"
-import {Link} from "react-router-dom"
+import {Link, useNavigate, useParams} from "react-router-dom"
 
 
 
 export const DiveLogDetail = (props) => {
     const { diveLogs, deleteLog } = useContext(LogContext)
+    const params = useParams()
+    const chosenDiveLog = parseInt(params.diveLogId)
 
-    const chosenDiveLog = parseInt(props.match.params.diveLogId)
-    const diveLog = diveLogs.find(l => l.id === chosenDiveLog) || {}
+    const diveLog = diveLogs.find(l => l.id === chosenDiveLog) || {} //error is right here
+    const navigate = useNavigate()
 
 
     //send dive log to HTML rep component and render buttons 
@@ -26,8 +28,8 @@ export const DiveLogDetail = (props) => {
             <p>Dashboard</p>
             </div>
             <div className="editDelContainer">
-            <p className="log-link editBtn" onClick={() => {props.history.push(`/divelog/edit/${diveLog.id}`)}}>Edit</p>
-            <p className="log-link delBtn" onClick={() => deleteLog(diveLog.id).then(() => props.history.push("/divelog/all"))}>Delete</p>
+            <p className="log-link editBtn" onClick={() => {navigate(`/divelogs/edit/${diveLog.id}`)}}>Edit</p>
+            <p className="log-link delBtn" onClick={() => deleteLog(diveLog.id).then(() => navigate("/"))}>Delete</p>
             </div>
             <DiveLog key={diveLog.id} diveLog={diveLog} />
             

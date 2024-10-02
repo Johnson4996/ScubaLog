@@ -10,7 +10,8 @@ export const DiveLogForm = () => {
     const { getTankTypes, tankTypes } = useContext(TankContext);
     const [diveLog, setDiveLog] = useState({});
     
-    const { diveLogId } = useParams(); 
+    const params = useParams(); 
+    const diveLogId = parseInt(params.diveLogId);
     const navigate = useNavigate(); 
 
     // Determine if we are in edit mode
@@ -26,7 +27,7 @@ export const DiveLogForm = () => {
     // Grab the log requested in edit mode
     const getLogInEditMode = () => {
         if (editMode) {
-            const selectedLog = diveLogs.find((l) => l.id === parseInt(diveLogId)) || {};
+            const selectedLog = diveLogs.find((l) => l.id === diveLogId) || {};
             setDiveLog(selectedLog);
         }
     };
@@ -71,8 +72,7 @@ export const DiveLogForm = () => {
                     comments: diveLog.comments,
                     verifyName: diveLog.verifyName,
                     verifyCert: diveLog.verifyCert,
-                    verifyType: diveLog.verifyType,
-                    userId: parseInt(localStorage.getItem("activeUser")),
+                    verifyType: diveLog.verifyType
                 }).then(() => navigate("/"));
             } else {
                 addDiveLog({
@@ -96,7 +96,6 @@ export const DiveLogForm = () => {
                     verifyName: diveLog.verifyName,
                     verifyCert: diveLog.verifyCert,
                     verifyType: diveLog.verifyType,
-                    userId: parseInt(localStorage.getItem("activeUser")),
                 }).then(() => navigate("/"));
             }
         }
@@ -120,7 +119,7 @@ export const DiveLogForm = () => {
                 <button
                     onClick={(evt) => {
                         evt.preventDefault();
-                        navigate("/divelog/all");
+                        navigate("/");
                     }}
                     className="btn btn-primary btnCancel"
                 >

@@ -21,8 +21,7 @@
       "comments": "Water was warm, visibility was great and saw a ton of aquatic life!",
       "verifyName": "John Johnson",
       "verifyCert": "12345",
-      "verifyType": "Buddy",
-      "userId": 1
+      "verifyType": "Buddy"
     },
     {
       "id": 2,
@@ -44,8 +43,7 @@
       "comments": "Saw a ton of fish and even a stingray! Lots of movement down there today!",
       "verifyName": "Frank Ocean",
       "verifyCert": "12345",
-      "verifyType": "Buddy",
-      "userId": 1
+      "verifyType": "Buddy"
     },
     {
       "id": 3,
@@ -68,8 +66,7 @@
       "comments": "Water Temp was quite chilly below 30m. Visibility was poor, water was very cloudy. ",
       "verifyName": "Tim Numbers",
       "verifyCert": "12345",
-      "verifyType": "Buddy",
-      "userId": 1
+      "verifyType": "Buddy"
     },
     {
       "id": 4,
@@ -92,15 +89,7 @@
       "comments": "Great visibility, cold water and was really neat seeing the school bus!",
       "verifyName": "Andy Thomas",
       "verifyCert": "12345",
-      "verifyType": "Buddy",
-      "userId": 1
-    }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "email": "test@test.com",
-      "password": "test"
+      "verifyType": "Buddy"
     }
   ],
   "tanktypes": [

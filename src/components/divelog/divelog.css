@@ -1,8 +1,7 @@
 .recentDives{
-    width: 25vw;
+    width: 30vw;
     overflow-y: scroll;
     height:100vh;
-    margin-bottom: 4rem;
     background-color: rgb(77,76,76,.7);
     border-radius: 5px;
     position: relative;

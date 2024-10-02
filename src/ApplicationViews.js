@@ -7,9 +7,7 @@ import { DiveLogDetail } from "./components/divelog/DiveLogDetail"
 import { DiveLogForm } from "./components/divelog/DiveLogForm"
 import { SuitTypeProvider } from "./components/suittype/SuitTypeProvider"
 import { TankTypeProvider } from "./components/tanktype/TankTypeProvider"
-import { WishlistProvider } from "./components/wishlist/WishlistProvider"
-import { WishListRender } from "./components/wishlist/WishRender"
-import { WishListForm } from "./components/wishlist/WishListForm"
+
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -18,30 +16,25 @@ export const ApplicationViews = () => {
 
     const MapMarkerIcon = new L.DivIcon({
         className: 'map-marker',
-        iconSize: [10, 10], // Adjust size to fit the SVG properly
-        iconAnchor: [15, 42], // Position the "tip" of the marker
-        popupAnchor: [0, -42], // Position the popup above the marker
+        iconSize: [10, 10], 
+        iconAnchor: [15, 42], 
+        popupAnchor: [0, -42], 
     });
 
     return (
-        <WishlistProvider>
+        
             <DiveLogProvider>
                 <SuitTypeProvider>
                     <TankTypeProvider>
                         <Routes>
-                            <Route exact path="/" element={
+                            <Route path="/" element={
                                 <div className="dashboard-top">
-                                    {/* <h2>Dashboard</h2>
-                                    <div className="line"></div> */}
                                     <div className="container">
                                         <div className="top-content">
                                             <DiveLogList />
                                         </div>
-                                        {/* <div className="bottom-content">
-                                            <WishListRender />
-                                        </div> */}
                                     </div>
-                                    <div style={{ height: '100vh', width: '75vw' }}>
+                                    <div style={{ height: '100vh', width: '100vw' }}>
                                         <MapContainer 
                                             center={[0, 0]} 
                                             zoom={3} 
@@ -62,17 +55,17 @@ export const ApplicationViews = () => {
 
                             <Route exact path="/divelog" element={<DiveLogAll />} />
 
-                            <Route path="/divelog/:diveLogId" element={<DiveLogDetail />} />
-                            <Route path="/divelog/all" element={<DiveLogAll />} />
-                            <Route path="/divelog/new" element={<DiveLogForm />} />
-                            <Route path="/divelog/edit/:diveLogId" element={<DiveLogForm />} />
+                            <Route path="/divelogs/:diveLogId" element={<DiveLogDetail />} />
+                   
+                            <Route path="/divelogs/new" element={<DiveLogForm />} />
 
-                            <Route path="/wishlist/new" element={<WishListForm />} />
+                            <Route path="/divelogs/edit/:diveLogId" element={<DiveLogForm />} />
+
                             <Route path="*" element={<div>Page Not Found</div>} />
+
                         </Routes>
                     </TankTypeProvider>
                 </SuitTypeProvider>
             </DiveLogProvider>
-        </WishlistProvider>
     )
 }

@@ -31,8 +31,6 @@ export const DiveLogAll = () => {
 
 
                     diveLogs.reverse().map(dl => {
-
-                        if (dl.userId === parseInt(localStorage.getItem("activeUser"))) {
                             return (
                                 <Link key={dl.id} className="log-link-all"
                                     to={{
@@ -46,9 +44,6 @@ export const DiveLogAll = () => {
                                     </section>
                                 </Link>
                             )
-                        }
-
-
                     })
                 }
             </div>
